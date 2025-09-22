@@ -1,10 +1,10 @@
-from datetime import datetime, timezone
+import pandas as pd
 
-def show_naive_aware():
-    naive = datetime.now()
-    aware = datetime.now(timezone.utc)
-    print("Naive:", naive)
-    print("Aware (UTC):", aware)
-
-if __name__ == "__main__":
-    show_naive_aware()
+def fix_missing_values(df: pd.DataFrame, method="ffill") -> pd.DataFrame:
+    """Fix missing values using forward fill or mean."""
+    if method == "ffill":
+        return df.fillna(method="ffill")
+    elif method == "mean":
+        return df.fillna(df.mean())
+    else:
+        return df

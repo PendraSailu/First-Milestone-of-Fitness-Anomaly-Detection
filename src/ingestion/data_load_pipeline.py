@@ -1,13 +1,17 @@
-from src.ingestion.load_csv import load_csv
-from src.ingestion.load_json import load_json
+import pandas as pd
+import json
 
-
-def load_all():
-    csv_data = load_csv("data/sample_heart_rate.csv")
-    json_data = load_json("data/sample_fitness_data.json")
-    return csv_data, json_data
-
-if __name__ == "__main__":
-    c, j = load_all()
-    print("CSV sample:\n", c.head())
-    print("\nJSON sample:\n", j.head())
+def load_data(file):
+    """Load fitness data from uploaded file (CSV/JSON)."""
+    filename = file.name.lower()
+    
+    if filename.endswith(".csv"):
+        return pd.read_csv(file)
+    
+    elif filename.endswith(".json"):
+        # Streamlit file uploader gives a BytesIO-like object → need decode
+        data = json.load(file)
+        return pd.DataFrame(data)
+    
+    else:
+        raise ValueError("Unsupported file format. Please upload CSV or JSON.")

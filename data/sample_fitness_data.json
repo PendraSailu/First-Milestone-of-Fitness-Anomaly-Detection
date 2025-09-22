@@ -1,4 +1,7 @@
 [
-{"timestamp": "2025-09-12T07:59:00", "heart_rate": 65, "steps": 0, "activity": "rest"},
-{"timestamp": "2025-09-12T08:00:00", "heart_rate": 66, "steps": 5, "activity": "walk"}
+  {"timestamp": "2025-09-01 08:00:00", "heart_rate": 72, "steps": 0, "sleep_hours": 0},
+  {"timestamp": "2025-09-01 08:01:00", "heart_rate": 74, "steps": 5, "sleep_hours": 0},
+  {"timestamp": "2025-09-01 08:02:00", "heart_rate": 178, "steps": 12, "sleep_hours": 0},
+  {"timestamp": "2025-09-01 08:03:00", "heart_rate": 75, "steps": 15, "sleep_hours": 0},
+  {"timestamp": "2025-09-01 08:04:00", "heart_rate": 73, "steps": 20, "sleep_hours": 0}
 ]
